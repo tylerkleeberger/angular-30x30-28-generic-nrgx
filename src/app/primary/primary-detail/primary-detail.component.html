@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-xs-12">
+      <h1>{{ primaryItem.name }}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div
+        class="btn-group"
+        appDropdown>
+        <button
+          type="button"
+          class="btn btn-primary dropdown-toggle">
+          Manage Item Data <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a (click)="onAddtoSecondaryItems()" style="cursor: pointer;">Add to Secondary List</a></li>
+          <li><a style="cursor: pointer;" (click)="onEditPrimaryItem()">Edit Item Data</a></li>
+          <li><a style="cursor: pointer;" (click)="onDeletePrimaryItem()">Delete Item Data</a></li>
+        </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    {{ primaryItem.description }}
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let secondaryItem of primaryItem.secondaryItems">
+        {{ secondaryItem.name }} - {{ secondaryItem.amount }}
+      </li>
+    </ul>
+  </div>
+</div>

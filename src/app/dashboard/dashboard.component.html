@@ -1,0 +1,55 @@
+<!-- NAVBAR / TOOLBAR -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <!-- title -> link makes clickable -->
+      <a routerLink="/" class="navbar-brand">Basic Item Selection</a>
+    </div>
+
+    <!-- Main Link List -->
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+
+          <!-- TOOLBAR LINKS -->
+          <!-- main -->
+        <li routerLinkActive="active" *ngIf="isAuthenticated">
+          <a routerLink="/primary">Primary Items</a>
+        </li>
+
+        <!-- Login / Signup -->
+        <li routerLinkActive="active" *ngIf="!isAuthenticated">
+          <a routerLink="/authorization">Login/Sign-Up</a>
+        </li>
+
+        <!-- secondary -->
+        <li routerLinkActive="active">
+          <a routerLink="/secondary">Secondary Items</a>
+        </li>
+      </ul>
+
+      <!-- LOGOUT SECTION -->
+      <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="isAuthenticated">
+          <a style="cursor: pointer;" (click)="onLogout()">Logout</a>
+        </li>
+
+        <!-- Dropdown to Manage Items -->
+        <li class="dropdown" appDropdown *ngIf="isAuthenticated">
+          <a style="cursor: pointer;" class="dropdown-toggle" role="button"
+            >Manage Items <span class="caret"></span
+          ></a>
+          <ul class="dropdown-menu">
+              <!-- Save Items -->
+            <li>
+              <a style="cursor: pointer;" (click)="onSaveData()">Save Data</a>
+            </li>
+              <!-- API Call to Get Items -->
+            <li>
+              <a style="cursor: pointer;" (click)="onFetchData()">Fetch Data</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,24 @@
+{
+"primaryItems": [
+    {
+      "name": "Alpha",
+      "description": "This is the alpha description",
+      "secondaryItems": [
+        {
+          "name": "Uno",
+          "amount": "1"
+        }
+      ]
+    },
+    {
+      "name": "Beta",
+      "description": "This is the beta description",
+      "secondaryItems": [
+        {
+          "name": "Dos",
+          "amount": "2"
+        }
+      ]
+    }
+  ]
+}
